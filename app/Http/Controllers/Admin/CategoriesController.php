@@ -42,7 +42,7 @@ class CategoriesController extends Controller
     {
         $category->title = $request->title;
         $category->save();
-        return redirect('admin/categories');
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -62,9 +62,10 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        $arr['category'] = $category;
+        return view('admin.categories.edit')->with($arr);
     }
 
     /**
@@ -74,9 +75,11 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+            $category->title = $request->title;
+            $category->save();
+            return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -87,6 +90,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect()->route('admin.categories.index');
     }
 }
