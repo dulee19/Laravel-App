@@ -202,7 +202,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link @if($segment =='news') active @endif">
+            <a href="{{ route('admin.news.index') }}" class="nav-link @if($segment =='news') active @endif">
               <i class="nav-icon fa fa-pie-chart"></i>
               <p>
                 News      
