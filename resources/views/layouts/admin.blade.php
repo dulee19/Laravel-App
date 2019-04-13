@@ -183,7 +183,7 @@
 
                ?>
           <li class="nav-item">
-            <a href="{{ route('home') }}" class="nav-link @if(!$segment) active
+            <a href="{{ route('admin.home') }}" class="nav-link @if(!$segment) active
             @endif
             ">
               <i class="nav-icon fa fa-dashboard"></i>
