@@ -33,9 +33,9 @@
 					<tr>
 						<td>{{ $n->id }}</td>
 						<td>{{ $n->title }}</td>
-						<td><a href="{{ route('admin.news.edit', $c->id) }}" class="btn btn-secondary">Edit</a>
+						<td><a href="{{ route('admin.news.edit', $n->id) }}" class="btn btn-secondary">Edit</a>
               <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()"  class="btn btn-danger">Delete</a>
-              <form action="{{ route('admin.news.destroy', $c->id) }}" method="post">
+              <form action="{{ route('admin.news.destroy', $n->id) }}" method="post">
                 @method('DELETE')
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
               </form>
