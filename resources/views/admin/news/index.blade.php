@@ -25,6 +25,7 @@
     		<table class="table table-bordered table-striped">
     			<tr>
     				<th>ID</th>
+            <th>Category</th>
     				<th>Title</th>
     				<th>Action</th>
     			</tr>    
@@ -33,6 +34,7 @@
 					<tr>
 						<td>{{ $n->id }}</td>
 						<td>{{ $n->title }}</td>
+            <td>{{ $n->category->title }}</td>
 						<td><a href="{{ route('admin.news.edit', $n->id) }}" class="btn btn-secondary">Edit</a>
               <a href="javascript:void(0)" onclick="$(this).parent().find('form').submit()"  class="btn btn-danger">Delete</a>
               <form action="{{ route('admin.news.destroy', $n->id) }}" method="post">

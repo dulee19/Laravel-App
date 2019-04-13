@@ -30,6 +30,27 @@
           </div>
          </div> 
 
+         <div class="form-group">
+          <div class="row">
+            <label class="col-md-3">Category</label>
+            <div class="col-md-6">
+              <select name="category_id" class="form-control">
+                <option value="">Choose Category</option>
+                @foreach($categories as $c)
+                  <option value="{{ $c->id }}" 
+                      
+                      @if($c->id == $news->category_id)
+                        selected
+                      @endif
+
+                    >{{ $c->title }}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+         </div> 
+
         <div class="form-group">
           <div class="row">
             <label class="col-md-3">Author</label>
